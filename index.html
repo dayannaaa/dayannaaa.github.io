@@ -108,31 +108,23 @@ font-size: 2em;
 </form>
 <hr>
 
-<canvas id="tetris_canv" width="300" height="400"></canvas>
-<script src="figure.js"></script>
-<script src="script.js"></script>
-<script src="page.js"></script>
-<script src="mobile.js"></script>
-<button class="up-btn"><img src="img/up.png" width="50" height="50" alt="lorem"></button>
-<button class="down-btn"><img src="img/down.png" width="50" height="50" alt="lorem"></button>
-<button class="left-btn"><img src="img/left.png" width="50" height="50" alt="lorem"></button>
-<button class="right-btn"><img src="img/right.png" width="50" height="50" alt="lorem"></button>
-<button class="pause-btn"><img class="picture" src="img/pause.png" width="50" height="50" alt="lorem"></button>
-<div class="point" style="position: absolute; top:30px; left:215px;">Очки:
-    <div class="num" style="position: relative;">0</div>
-</div>
+<div id="app" style="margin: 0 auto;max-width: 1200px"></div>
 
-<div class="name" style="position: absolute; top:70px; left:215px;">Имя:
-    <div class="nam" style="position: relative;">Игрок</div>
-</div>
+<script src="../dist/snake.js"></script>
+<script>
+    const el = document.getElementById('app')
+    const Snake = window.Snake
+    if (Snake)
+    {
+        const app = new Snake(el, {
+            rows: 35,
+            columns: 60
+        })
+    }
+</script>
 
-<div class="name-input">
-    <div id="input-your-name">Введи свое имя:</div>
-    <form>
-        <input id="input-name" type="text" placeholder="Игрок">
-        <input id="button-name" type="button" value="Начать">
-    </form>
-</div>        
+
+
 
  </td>
 <td width="70%">
